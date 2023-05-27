@@ -3,14 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:grocare_submission/provider/video_provider.dart';
 import 'package:grocare_submission/utils/api_call.dart';
 import 'package:provider/provider.dart';
-import '../models/video_model.dart';
 import '../utils/video_card.dart';
 import 'home_page.dart';
 import 'package:number_paginator/number_paginator.dart';
-import 'package:flutter_pagination/flutter_pagination.dart';
 
 
 class VideoPage extends StatefulWidget {
+  const VideoPage({super.key});
+
   @override
   State<VideoPage> createState() => _VideoPageState();
 }
@@ -34,21 +34,22 @@ class _VideoPageState extends State<VideoPage> {
     videoProvider.videos = await fetchVideos(currentPage.value);
   }
 
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF5957d3),
+          backgroundColor: const Color(0xFF5957d3),
           title: Text('Flutter Shorts', style: GoogleFonts.allura(fontSize: 35, fontWeight: FontWeight.bold),),
           actions: [
-            IconButton(onPressed: (){}, icon: Icon(Icons.camera_alt))
+            IconButton(onPressed: (){}, icon: const Icon(Icons.camera_alt))
           ],
         ),
         body: Column(
           children: [
             Expanded(
               child: Container(
-                padding: EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
+                padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
                 child: Consumer<VideoProvider>(
                   builder: (context, value, child) {
                     return GridView.builder(
@@ -88,7 +89,7 @@ class _VideoPageState extends State<VideoPage> {
               builder: (context, value, child) {
                 return NumberPaginator(
                   config: NumberPaginatorUIConfig(
-                    buttonSelectedBackgroundColor: Color(0xFF5957d3),
+                    buttonSelectedBackgroundColor: const Color(0xFF5957d3),
                     buttonSelectedForegroundColor: Colors.white,
                     // buttonUnselectedBackgroundColor: Colors.grey[700],
                     buttonUnselectedForegroundColor: Colors.grey,

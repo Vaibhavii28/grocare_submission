@@ -22,9 +22,7 @@ class Creator {
   final String handle;
   final String creatorImage;
 
-  Creator({
-    required this.handle, required this.creatorImage
-  });
+  Creator({required this.handle, required this.creatorImage});
 }
 
 class Comment {
@@ -54,4 +52,3 @@ class Submission {
     required this.thumbnail,
   });
 }
-

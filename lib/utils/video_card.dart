@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../models/video_model.dart';
@@ -31,14 +30,14 @@ Widget videoCard(Video video) {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 12.0,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     width: 12.0,
                   ),
                   Expanded(
@@ -47,7 +46,7 @@ Widget videoCard(Video video) {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '${video.title}',
+                          video.title,
                           style: GoogleFonts.roboto(fontWeight: FontWeight.bold, fontSize: 16)
                         ),
                         Text('${video.reactionCount} reactions', style: GoogleFonts.roboto(fontSize: 14),),

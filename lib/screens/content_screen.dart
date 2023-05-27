@@ -1,15 +1,13 @@
   import 'package:chewie/chewie.dart';
   import 'package:flutter/material.dart';
-  import 'package:grocare_submission/utils/api_call.dart';
   import '../models/video_model.dart';
-  import '../utils/api_call.dart';
   import 'like_icon.dart';
   import 'options_screen.dart';
   import 'package:video_player/video_player.dart';
 
   class ContentScreen extends StatefulWidget {
     final Video video;
-    ContentScreen({required this.video});
+    const ContentScreen({super.key, required this.video});
 
     @override
     _ContentScreenState createState() => _ContentScreenState();
@@ -61,7 +59,7 @@
               controller: _chewieController!,
             ),
           )
-              : Column(
+              : const Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CircularProgressIndicator(),
